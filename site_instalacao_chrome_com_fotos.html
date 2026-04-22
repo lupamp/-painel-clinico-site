@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Como instalar a extensão no Google Chrome</title>
+  <meta name="description" content="Página com passo a passo para baixar e instalar a extensão manualmente no Google Chrome.">
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --text:#132238;
+      --muted:#5f6f84;
+      --line:#dbe3ee;
+      --primary:#1565ff;
+      --primary-dark:#0c49bf;
+      --accent:#eef4ff;
+      --ok:#0a8f50;
+      --shadow:0 10px 30px rgba(21,40,71,.08);
+      --radius:18px;
+      --max:1140px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px;}
+    .hero{
+      background:linear-gradient(135deg,#0d1f3a 0%, #14315f 50%, #1565ff 100%);
+      color:white;
+      padding:64px 0 48px;
+    }
+    .badge{
+      display:inline-block; padding:8px 12px; border-radius:999px;
+      background:rgba(255,255,255,.16); font-size:13px; font-weight:700; letter-spacing:.2px;
+    }
+    h1{font-size:clamp(32px,5vw,54px); line-height:1.05; margin:18px 0 14px}
+    .subtitle{max-width:760px; font-size:18px; opacity:.95; margin:0 0 24px}
+    .hero-actions{display:flex; flex-wrap:wrap; gap:14px; margin:22px 0 14px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:14px 20px; border-radius:14px; font-weight:700; transition:.2s ease;
+      border:1px solid transparent;
+    }
+    .btn-primary{background:#fff; color:#14315f; box-shadow:var(--shadow)}
+    .btn-primary:hover{transform:translateY(-1px)}
+    .btn-secondary{background:transparent; color:#fff; border-color:rgba(255,255,255,.35)}
+    .hero-note{font-size:14px; opacity:.88; margin-top:10px}
+
+    .top-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:22px; margin-top:30px}
+    .card{
+      background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .info-card{padding:24px}
+    .info-card h2{margin:0 0 10px; font-size:24px}
+    .info-list{margin:14px 0 0; padding-left:18px; color:var(--muted)}
+    .info-list li{margin:8px 0}
+    .mini-boxes{display:grid; grid-template-columns:1fr; gap:14px}
+    .mini-box{padding:18px 18px 16px}
+    .mini-box h3{margin:0 0 8px; font-size:18px}
+    .mini-box p{margin:0; color:var(--muted); font-size:15px}
+
+    section{padding:48px 0}
+    .section-title{font-size:32px; margin:0 0 8px}
+    .section-sub{color:var(--muted); margin:0 0 26px}
+
+    .steps{display:grid; gap:22px}
+    .step{
+      display:grid; grid-template-columns:90px 1fr; gap:18px; align-items:start;
+      padding:20px;
+    }
+    .step-num{
+      width:70px; height:70px; border-radius:18px; background:var(--accent); color:var(--primary);
+      font-size:28px; font-weight:800; display:flex; align-items:center; justify-content:center;
+      border:1px solid #d8e5ff;
+    }
+    .step-body{display:grid; grid-template-columns:1.15fr .85fr; gap:20px; align-items:center}
+    .step-copy h3{margin:0 0 8px; font-size:25px}
+    .step-copy p{margin:0 0 12px; color:var(--muted)}
+    .step-copy ul{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+    .tag{display:inline-block; padding:6px 10px; font-size:12px; font-weight:800; border-radius:999px; background:#eef6ff; color:#245ad3; margin-bottom:10px}
+
+    .shot{
+      background:#f8fbff; border:1px solid var(--line); border-radius:16px; padding:10px;
+    }
+    .shot svg{width:100%; height:auto; display:block; border-radius:12px; background:#fff; border:1px solid #e9eef6}
+
+    .warning{
+      background:#fff8e8; border:1px solid #f1ddb0; color:#705610;
+      padding:18px 20px; border-radius:16px; margin-top:24px;
+    }
+    .warning strong{display:block; margin-bottom:6px}
+
+    .faq{display:grid; gap:14px}
+    details{background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px 18px}
+    summary{cursor:pointer; font-weight:700}
+    details p{color:var(--muted); margin:12px 0 0}
+
+    .footer{padding:34px 0 60px; color:var(--muted); font-size:14px}
+    .footer .card{padding:18px}
+    code{background:#f0f4fa; padding:2px 6px; border-radius:7px; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+
+    @media (max-width: 940px){
+      .top-grid,.step-body{grid-template-columns:1fr}
+    }
+    @media (max-width: 700px){
+      .step{grid-template-columns:1fr}
+      .step-num{width:58px;height:58px;font-size:24px}
+      .section-title{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <span class="badge">INSTALAÇÃO MANUAL NO GOOGLE CHROME</span>
+      <h1>Como instalar a extensão no Google Chrome</h1>
+      <p class="subtitle">Baixe o arquivo ZIP da extensão, extraia a pasta e siga o passo a passo abaixo para instalar manualmente no Chrome usando o modo do desenvolvedor.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="./Linha%20cuidado.zip" download>⬇ Baixar arquivo ZIP da extensão</a>
+        <a class="btn btn-secondary" href="#passo-a-passo">Ver passo a passo</a>
+      </div>
+      <div class="hero-note">Importante: para o botão funcionar no GitHub, envie também o arquivo <strong>Linha cuidado.zip</strong> para o mesmo repositório/pasta onde estiver este arquivo HTML.</div>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap top-grid">
+      <div class="card info-card">
+        <h2>Antes de começar</h2>
+        <p>Você vai precisar de um computador com Google Chrome instalado. O Chrome <strong>não instala o ZIP diretamente</strong>; antes, é necessário <strong>extrair</strong> o conteúdo do arquivo para uma pasta normal.</p>
+        <ul class="info-list">
+          <li>Baixe o arquivo ZIP da extensão.</li>
+          <li>Extraia o ZIP para uma pasta.</li>
+          <li>Abra a página <code>chrome://extensions</code>.</li>
+          <li>Ative o <strong>Modo do desenvolvedor</strong>.</li>
+          <li>Clique em <strong>Carregar sem compactação</strong>.</li>
+          <li>Selecione a pasta extraída.</li>
+        </ul>
+      </div>
+      <div class="mini-boxes">
+        <div class="card mini-box">
+          <h3>Download rápido</h3>
+          <p>Se o botão de download não funcionar, verifique se o arquivo ZIP foi enviado para o GitHub com o nome exato <strong>Linha cuidado.zip</strong>.</p>
+        </div>
+        <div class="card mini-box">
+          <h3>Compatibilidade</h3>
+          <p>Esse método funciona no Google Chrome em Windows. Em navegadores baseados em Chromium, o fluxo é semelhante.</p>
+        </div>
+        <div class="card mini-box">
+          <h3>Dica</h3>
+          <p>Depois da instalação, você pode fixar a extensão no Chrome para acessar mais facilmente no canto superior direito.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="passo-a-passo">
+    <div class="wrap">
+      <h2 class="section-title">Passo a passo com imagens</h2>
+      <p class="section-sub">A sequência abaixo mostra exatamente o fluxo recomendado para instalar a extensão de forma manual.</p>
+
+      <div class="steps">
+        <div class="card step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-copy">
+              <span class="tag">DOWNLOAD</span>
+              <h3>Baixe o arquivo ZIP</h3>
+              <p>Clique no botão <strong>Baixar arquivo ZIP da extensão</strong>. O arquivo será salvo no seu computador.</p>
+              <ul>
+                <li>Se estiver no GitHub Pages, o link abrirá o arquivo enviado junto com o site.</li>
+                <li>Se nada acontecer, confirme se o ZIP está no mesmo local do site.</li>
+              </ul>
+            </div>
+            <div class="shot">
+              <svg viewBox="0 0 640 410" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Imagem ilustrativa do botão de download da extensão">
+                <rect width="640" height="410" fill="#f4f8ff"/>
+                <rect x="24" y="24" width="592" height="362" rx="20" fill="#fff" stroke="#dfe7f2"/>
+                <rect x="48" y="52" width="240" height="18" rx="9" fill="#c6d7f8"/>
+                <rect x="48" y="90" width="520" height="14" rx="7" fill="#e8eef9"/>
+                <rect x="48" y="114" width="470" height="14" rx="7" fill="#eef3fb"/>
+                <rect x="48" y="164" width="280" height="64" rx="18" fill="#1565ff"/>
+                <text x="188" y="204" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#fff" font-weight="700">Baixar arquivo ZIP</text>
+                <circle cx="84" cy="196" r="16" fill="#fff" opacity="0.25"/>
+                <path d="M84 184v16m0 0-8-8m8 8 8-8" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="48" y="256" width="542" height="88" rx="16" fill="#f7fbff" stroke="#dfe7f2"/>
+                <text x="70" y="290" font-size="22" font-family="Arial, sans-serif" fill="#1b3c74" font-weight="700">Arquivo</text>
+                <text x="70" y="320" font-size="20" font-family="Arial, sans-serif" fill="#5f6f84">Linha cuidado.zip</text>
+                <rect x="486" y="276" width="84" height="42" rx="10" fill="#e9f1ff"/>
+                <text x="528" y="302" text-anchor="middle" font-size="18" font-family="Arial, sans-serif" fill="#245ad3" font-weight="700">ZIP</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="card step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-copy">
+              <span class="tag">EXTRAÇÃO</span>
+              <h3>Extraia o conteúdo do ZIP</h3>
+              <p>Após o download, clique com o botão direito no arquivo ZIP e escolha <strong>Extrair tudo</strong> ou opção semelhante.</p>
+              <ul>
+                <li>Você deve terminar com uma <strong>pasta</strong> da extensão, não com o arquivo ZIP.</li>
+                <li>É essa pasta que será selecionada no Chrome.</li>
+              </ul>
+            </div>
+            <div class="shot">
+              <svg viewBox="0 0 640 410" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Imagem ilustrativa de extração do arquivo ZIP">
+                <rect width="640" height="410" fill="#f7f9fd"/>
+                <rect x="20" y="24" width="600" height="362" rx="18" fill="#fff" stroke="#dfe7f2"/>
+                <rect x="48" y="60" width="210" height="18" rx="9" fill="#d0ddf5"/>
+                <rect x="48" y="106" width="180" height="132" rx="18" fill="#fff7db" stroke="#f3de98"/>
+                <rect x="92" y="144" width="92" height="52" rx="10" fill="#f0c53a"/>
+                <rect x="116" y="126" width="44" height="26" rx="8" fill="#f0c53a"/>
+                <text x="138" y="214" text-anchor="middle" font-size="18" font-family="Arial, sans-serif" fill="#7e6211" font-weight="700">ZIP</text>
+                <path d="M260 172h112" stroke="#6ca0ff" stroke-width="10" stroke-linecap="round"/>
+                <path d="M356 152l26 20-26 20" fill="none" stroke="#1565ff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="412" y="118" width="170" height="108" rx="16" fill="#edf4ff" stroke="#cfe0ff"/>
+                <path d="M454 176h84" stroke="#7ca4f6" stroke-width="12" stroke-linecap="round"/>
+                <path d="M454 154h54" stroke="#7ca4f6" stroke-width="12" stroke-linecap="round"/>
+                <text x="497" y="214" text-anchor="middle" font-size="18" font-family="Arial, sans-serif" fill="#2952a5" font-weight="700">Pasta extraída</text>
+                <rect x="48" y="282" width="534" height="54" rx="14" fill="#f7fbff" stroke="#e3eaf5"/>
+                <text x="68" y="316" font-size="20" font-family="Arial, sans-serif" fill="#5f6f84">Clique com o botão direito → “Extrair tudo”</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="card step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-copy">
+              <span class="tag">CHROME</span>
+              <h3>Abra a página de extensões do Chrome</h3>
+              <p>No navegador, digite <code>chrome://extensions</code> na barra de endereços e pressione Enter.</p>
+              <ul>
+                <li>Essa é a área onde o Chrome gerencia as extensões instaladas.</li>
+              </ul>
+            </div>
+            <div class="shot">
+              <svg viewBox="0 0 640 410" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Imagem ilustrativa da página de extensões do Chrome">
+                <rect width="640" height="410" fill="#edf3fb"/>
+                <rect x="16" y="20" width="608" height="370" rx="18" fill="#fff" stroke="#dfe7f2"/>
+                <rect x="36" y="40" width="568" height="42" rx="12" fill="#f4f7fb" stroke="#e1e8f2"/>
+                <circle cx="58" cy="61" r="6" fill="#ff6b6b"/>
+                <circle cx="78" cy="61" r="6" fill="#ffcc5c"/>
+                <circle cx="98" cy="61" r="6" fill="#49d17d"/>
+                <rect x="134" y="49" width="416" height="24" rx="12" fill="#fff" stroke="#d4deec"/>
+                <text x="154" y="66" font-size="18" font-family="Arial, sans-serif" fill="#38537a">chrome://extensions</text>
+                <text x="44" y="122" font-size="28" font-family="Arial, sans-serif" fill="#1b2e4b" font-weight="700">Extensões</text>
+                <rect x="44" y="154" width="552" height="194" rx="16" fill="#f9fbff" stroke="#e4ebf6"/>
+                <rect x="70" y="188" width="150" height="110" rx="18" fill="#fff" stroke="#dbe3ee"/>
+                <rect x="246" y="188" width="150" height="110" rx="18" fill="#fff" stroke="#dbe3ee"/>
+                <rect x="422" y="188" width="150" height="110" rx="18" fill="#fff" stroke="#dbe3ee"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="card step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <div class="step-copy">
+              <span class="tag">MODO DO DESENVOLVEDOR</span>
+              <h3>Ative o modo do desenvolvedor</h3>
+              <p>No canto superior direito da página de extensões, ative a chavinha <strong>Modo do desenvolvedor</strong>.</p>
+              <ul>
+                <li>Sem isso, o botão para carregar a pasta da extensão não aparece.</li>
+              </ul>
+            </div>
+            <div class="shot">
+              <svg viewBox="0 0 640 410" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Imagem ilustrativa de ativar o modo do desenvolvedor no Chrome">
+                <rect width="640" height="410" fill="#edf3fb"/>
+                <rect x="16" y="20" width="608" height="370" rx="18" fill="#fff" stroke="#dfe7f2"/>
+                <text x="40" y="66" font-size="28" font-family="Arial, sans-serif" fill="#1b2e4b" font-weight="700">Extensões</text>
+                <text x="348" y="70" font-size="18" font-family="Arial, sans-serif" fill="#415d86">Modo do desenvolvedor</text>
+                <rect x="540" y="44" width="52" height="28" rx="14" fill="#1565ff"/>
+                <circle cx="575" cy="58" r="10" fill="#fff"/>
+                <path d="M484 124l54-20-10 32 26 8-68 42 16-34-30-10z" fill="#ffbf43" stroke="#d99d22"/>
+                <circle cx="566" cy="58" r="22" fill="none" stroke="#7fb0ff" stroke-width="4" stroke-dasharray="6 6"/>
+                <rect x="40" y="108" width="560" height="236" rx="16" fill="#f9fbff" stroke="#e4ebf6"/>
+                <rect x="64" y="146" width="132" height="46" rx="12" fill="#edf4ff" stroke="#d4e3ff"/>
+                <text x="130" y="175" text-anchor="middle" font-size="17" font-family="Arial, sans-serif" fill="#2a59b2" font-weight="700">Carregar sem compactação</text>
+                <rect x="212" y="146" width="120" height="46" rx="12" fill="#fff" stroke="#dbe3ee"/>
+                <text x="272" y="175" text-anchor="middle" font-size="17" font-family="Arial, sans-serif" fill="#425f88">Empacotar</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="card step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <div class="step-copy">
+              <span class="tag">SELEÇÃO DA PASTA</span>
+              <h3>Clique em “Carregar sem compactação”</h3>
+              <p>Depois de ativar o modo do desenvolvedor, clique no botão <strong>Carregar sem compactação</strong>.</p>
+              <ul>
+                <li>Uma janela do Windows será aberta para você escolher a pasta da extensão.</li>
+              </ul>
+            </div>
+            <div class="shot">
+              <svg viewBox="0 0 640 410" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Imagem ilustrativa da janela de seleção de pasta do Windows">
+                <rect width="640" height="410" fill="#eef2f7"/>
+                <rect x="46" y="44" width="548" height="322" rx="16" fill="#fff" stroke="#cfd8e4"/>
+                <rect x="46" y="44" width="548" height="38" rx="16" fill="#f3f6fb" stroke="#cfd8e4"/>
+                <text x="70" y="68" font-size="18" font-family="Arial, sans-serif" fill="#38537a">Selecionar pasta</text>
+                <rect x="76" y="102" width="146" height="184" rx="12" fill="#f8fbff" stroke="#dde6f1"/>
+                <rect x="96" y="126" width="106" height="16" rx="8" fill="#d4e0f5"/>
+                <rect x="96" y="158" width="88" height="16" rx="8" fill="#e3ebf7"/>
+                <rect x="244" y="104" width="316" height="182" rx="12" fill="#fff" stroke="#dde6f1"/>
+                <rect x="268" y="128" width="268" height="38" rx="10" fill="#edf4ff" stroke="#d7e4ff"/>
+                <path d="M286 145h30" stroke="#7ca4f6" stroke-width="8" stroke-linecap="round"/>
+                <text x="332" y="152" font-size="18" font-family="Arial, sans-serif" fill="#2a59b2">Pasta da extensão</text>
+                <rect x="268" y="182" width="244" height="30" rx="10" fill="#f7f9fc"/>
+                <rect x="268" y="222" width="224" height="30" rx="10" fill="#f7f9fc"/>
+                <rect x="392" y="304" width="74" height="34" rx="10" fill="#fff" stroke="#cfd8e4"/>
+                <text x="429" y="326" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#566983">Cancelar</text>
+                <rect x="478" y="304" width="82" height="34" rx="10" fill="#1565ff"/>
+                <text x="519" y="326" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#fff" font-weight="700">Selecionar</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="card step">
+          <div class="step-num">6</div>
+          <div class="step-body">
+            <div class="step-copy">
+              <span class="tag">FINALIZAÇÃO</span>
+              <h3>Selecione a pasta extraída da extensão</h3>
+              <p>Escolha a pasta que você extraiu do ZIP. Assim que selecionar, o Chrome instalará a extensão.</p>
+              <ul>
+                <li>Se aparecer algum erro, confira se você selecionou a pasta correta.</li>
+                <li>Normalmente ela deve conter o arquivo <code>manifest.json</code>.</li>
+              </ul>
+            </div>
+            <div class="shot">
+              <svg viewBox="0 0 640 410" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Imagem ilustrativa da extensão instalada com sucesso">
+                <rect width="640" height="410" fill="#eff8f3"/>
+                <rect x="20" y="24" width="600" height="362" rx="20" fill="#fff" stroke="#dbe6df"/>
+                <circle cx="320" cy="118" r="44" fill="#e9f8ef" stroke="#bde3cb"/>
+                <path d="M296 118l16 16 34-36" fill="none" stroke="#0a8f50" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="320" y="190" text-anchor="middle" font-size="30" font-family="Arial, sans-serif" fill="#155f3d" font-weight="800">Extensão instalada</text>
+                <text x="320" y="220" text-anchor="middle" font-size="20" font-family="Arial, sans-serif" fill="#5f6f84">A instalação foi concluída com sucesso no Chrome.</text>
+                <rect x="108" y="264" width="424" height="70" rx="16" fill="#f7fbff" stroke="#dde6f1"/>
+                <text x="320" y="294" text-anchor="middle" font-size="19" font-family="Arial, sans-serif" fill="#38537a">Dica: clique no ícone de peça de quebra-cabeça</text>
+                <text x="320" y="320" text-anchor="middle" font-size="19" font-family="Arial, sans-serif" fill="#38537a">e fixe a extensão para acessar mais rápido.</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="warning">
+        <strong>Atenção</strong>
+        O Google Chrome não instala uma extensão diretamente de um arquivo ZIP em site comum. O procedimento correto é: baixar o ZIP, extrair a pasta e usar <strong>Carregar sem compactação</strong> na página de extensões.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Perguntas frequentes</h2>
+      <div class="faq">
+        <details>
+          <summary>Preciso manter a pasta extraída no computador?</summary>
+          <p>Sim. Como a instalação foi feita com “Carregar sem compactação”, o Chrome utiliza aquela pasta para manter a extensão funcionando.</p>
+        </details>
+        <details>
+          <summary>Posso instalar clicando direto no ZIP?</summary>
+          <p>Não. Primeiro você precisa extrair o ZIP para uma pasta comum. Depois, selecione essa pasta no Chrome.</p>
+        </details>
+        <details>
+          <summary>Se der erro na instalação, o que devo verificar?</summary>
+          <p>Confirme se você selecionou a pasta certa e se dentro dela existe um arquivo <code>manifest.json</code>. Sem ele, o Chrome não consegue reconhecer a extensão.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="card">
+        <strong>Como publicar este site no GitHub Pages</strong><br>
+        Envie este arquivo HTML e o arquivo <strong>Linha cuidado.zip</strong> para o mesmo repositório. Depois ative o GitHub Pages na branch <strong>main</strong>, pasta <strong>/ (root)</strong>.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
